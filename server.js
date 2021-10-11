@@ -25,14 +25,14 @@ var server = http.createServer(function (request, response) {
     const index = filePath.lastIndexOf('.')
     const suffix = filePath.substring(index)
     const fileType = {
-        '.html': 'text / html',
-        '.js': 'text / javascript',
-        '.css': 'text / css',
+        '.html': 'text/html',
+        '.js': 'text/javascript',
+        '.css': 'text/css',
         '.png': 'image/png',
         '.jpg': 'image/jpeg'
     }
     response.setHeader('Content-Type',
-        `${fileType[suffix] || 'text/html'};charset=utf-8`)
+        `${fileType[suffix] || 'text/html'}; charset=utf-8`)
     let content
     try {
         content = fs.readFileSync(`./public/${filePath}`)
